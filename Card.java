@@ -26,6 +26,10 @@ public class Card {
         return number;
     }
 
+    public int getElo() {
+        return elo;
+    }
+
     public String toString() {
         String str = String.format("Color: %s, Name: %s, Number: %s, Elo: %s\n", color, name, number, elo);
         return str;

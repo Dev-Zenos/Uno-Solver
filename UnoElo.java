@@ -1,6 +1,13 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class UnoElo {
+
+    private ArrayList<Card> redCards = new ArrayList<Card>();
+    private ArrayList<Card> blueCards = new ArrayList<Card>();
+    private ArrayList<Card> greenCards = new ArrayList<Card>();
+    private ArrayList<Card> yellowCards = new ArrayList<Card>();
+    private ArrayList<Card> blackCards = new ArrayList<Card>();
 
     public ArrayList<Card> getValidCards(Card mainCard, ArrayList<Card> deck) {
         ArrayList<Card> validCards = new ArrayList<Card>();
@@ -12,5 +19,43 @@ public class UnoElo {
         }
         return validCards;
     }
+
+    public boolean isValidCard(Card mainCard, Card card) {
+        if (card.getColor().equals(mainCard.getColor()) || card.getNumber() == mainCard.getNumber()
+                || card.getColor().equals("Black")) {
+            return true;
+        }
+        return false;
+    }
+
+    public ArrayList<Card> isSameNumber(ArrayList<Card> deck, Card card) {
+        ArrayList<Card> sameNumber = new ArrayList<Card>();
+        for (Card c : deck) {
+            if (c.getNumber() == card.getNumber()) {
+                sameNumber.add(c);
+            }
+        }
+        return sameNumber;
+    }
+
+    // public void calculateElo(Card mainCard, ArrayList<Card> deck) {
+    // int elo = 0;
+    // for (Card card : deck) {
+    // elo = 0;
+    // if (isValidCard(mainCard, mainCard)) {
+    // if (card.getNumber() < 10) {
+    // ArrayList<Card> sameNumber = isSameNumber(deck, card);
+    // if (sameNumber.size() > 1) {
+    // elo += (5 * sameNumber.size());
+    // }
+    // elo += (10 - card.getNumber());
+    // card.setElo(elo);
+    // } else {
+    // ArrayList<Card> sameNumber = isSameNumber(deck, card);
+
+    // }
+    // }
+    // }
+    // }
 
 }
