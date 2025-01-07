@@ -9,6 +9,22 @@ public class UnoElo {
     private ArrayList<Card> yellowCards = new ArrayList<Card>();
     private ArrayList<Card> blackCards = new ArrayList<Card>();
 
+    public void sortCards(ArrayList<Card> deck) {
+        for (Card card : deck) {
+            if (card.getColor().equals("Red")) {
+                redCards.add(card);
+            } else if (card.getColor().equals("Blue")) {
+                blueCards.add(card);
+            } else if (card.getColor().equals("Green")) {
+                greenCards.add(card);
+            } else if (card.getColor().equals("Yellow")) {
+                yellowCards.add(card);
+            } else if (card.getColor().equals("Black")) {
+                blackCards.add(card);
+            }
+        }
+    }
+
     public ArrayList<Card> getValidCards(Card mainCard, ArrayList<Card> deck) {
         ArrayList<Card> validCards = new ArrayList<Card>();
         for (Card card : deck) {
