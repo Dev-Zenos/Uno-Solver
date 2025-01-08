@@ -53,24 +53,18 @@ public class UnoElo {
         return sameNumber;
     }
 
-    // public void calculateElo(Card mainCard, ArrayList<Card> deck) {
-    // int elo = 0;
-    // for (Card card : deck) {
-    // elo = 0;
-    // if (isValidCard(mainCard, mainCard)) {
-    // if (card.getNumber() < 10) {
-    // ArrayList<Card> sameNumber = isSameNumber(deck, card);
-    // if (sameNumber.size() > 1) {
-    // elo += (5 * sameNumber.size());
-    // }
-    // elo += (10 - card.getNumber());
-    // card.setElo(elo);
-    // } else {
-    // ArrayList<Card> sameNumber = isSameNumber(deck, card);
-
-    // }
-    // }
-    // }
-    // }
+    public void calculateElo(Card mainCard, ArrayList<Card> deck) {
+        int elo = 0;
+        for (Card card : deck) {
+            elo = 0;
+            if (isValidCard(mainCard, card)) {
+                if (card.getNumber() < 10) {
+                    elo += card.getNumber();
+                    card.setElo(elo);
+                }
+            }
+        }
+        ArrayList<Card> sameNumber = isSameNumber(deck, new Card(mainCard.getColor(), 10, 0)); // Reverse
+    }
 
 }
