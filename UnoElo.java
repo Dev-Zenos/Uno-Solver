@@ -8,6 +8,8 @@ public class UnoElo {
     private ArrayList<Card> yellowCards = new ArrayList<Card>();
     private ArrayList<Card> blackCards = new ArrayList<Card>();
 
+    private int deckElo = 0;
+
     public void sortCards(ArrayList<Card> deck) {
         for (Card card : deck) {
             if (card.getColor().equals("Red")) {
@@ -54,17 +56,23 @@ public class UnoElo {
     }
 
     public void calculateElo(Card mainCard, ArrayList<Card> deck) {
-        int elo = 0;
+        deckElo = 0;
         for (Card card : deck) {
-            elo = 0;
             if (isValidCard(mainCard, card)) {
                 if (card.getNumber() < 10) {
-                    elo += card.getNumber();
-                    card.setElo(elo);
+                    deckElo += card.getNumber();
                 }
             }
         }
         ArrayList<Card> sameNumber = isSameNumber(deck, new Card(mainCard.getColor(), 10, 0)); // Reverse
+        deckElo += sameNumber.size() * 10;
+
+        sameNumber = isSameNumber(deck, new Card(mainCard.getColor(), 11, 0)); // Skip
+        deckElo += sameNumber.size() * 11;
+
+        sameNumber = isSameNumber(deck, new Card(mainCard.getColor(), 12, 0)); // +2
+        deckElo += sameNumber.size() * 12;
+
     }
 
 }
