@@ -55,24 +55,26 @@ public class UnoElo {
         return sameNumber;
     }
 
-    public void calculateElo(Card mainCard, ArrayList<Card> deck) {
-        deckElo = 0;
-        for (Card card : deck) {
-            if (isValidCard(mainCard, card)) {
-                if (card.getNumber() < 10) {
-                    deckElo += card.getNumber();
-                }
-            }
-        }
-        ArrayList<Card> sameNumber = isSameNumber(deck, new Card(mainCard.getColor(), 10, 0)); // Reverse
-        deckElo += sameNumber.size() * 10;
+    // public void calculateElo(Card mainCard, ArrayList<Card> deck) {
+    // deckElo = 0;
+    // for (Card card : deck) {
+    // if (isValidCard(mainCard, card)) {
+    // if (card.getNumber() < 10) {
+    // deckElo += card.getNumber();
+    // }
+    // }
+    // }
+    // ArrayList<Card> sameNumber = isSameNumber(deck, new Card(mainCard.getColor(),
+    // 10, 0)); // Reverse
+    // deckElo += sameNumber.size() * 10;
 
-        sameNumber = isSameNumber(deck, new Card(mainCard.getColor(), 11, 0)); // Skip
-        deckElo += sameNumber.size() * 11;
+    // sameNumber = isSameNumber(deck, new Card(mainCard.getColor(), 11, 0)); //
+    // Skip
+    // deckElo += sameNumber.size() * 11;
 
-        sameNumber = isSameNumber(deck, new Card(mainCard.getColor(), 12, 0)); // +2
-        deckElo += sameNumber.size() * 12;
+    // sameNumber = isSameNumber(deck, new Card(mainCard.getColor(), 12, 0)); // +2
+    // deckElo += sameNumber.size() * 12;
 
-    }
+    // }
 
 }
