@@ -49,12 +49,7 @@ To install and run Uno-Solver, you need to have Java installed on your system. F
 
 ## Usage
 
-Once the application is running, you can interact with the simulation environment through the console. The following commands are available:
-
-- `start`: Start a new game simulation.
-- `strategy [name]`: Set the strategy to be used by the solver (e.g., `greedy`, `minimax`).
-- `simulate [n]`: Run `n` game simulations and display the results.
-- `help`: Display the list of available commands.
+Indev, No work D: only recognizes the cards on screen atm
 
 ## Contributing
 
