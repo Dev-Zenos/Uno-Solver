@@ -1,5 +1,3 @@
-Sure! Here's a sample `README.md` for the `Uno-Solver` repository:
-
 ```markdown
 # Uno-Solver
 
