@@ -71,6 +71,3 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 - Special thanks to the contributors and the open-source community for their support and contributions.
 - Inspired by the classic Uno game by Mattel.
 
-```
-
-Feel free to customize this `README.md` as per your project's specific details and requirements.
